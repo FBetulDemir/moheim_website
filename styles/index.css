@@ -6,7 +6,6 @@
 }
 body{
     background-color: #7e807c;
-
     width: 100%;
     letter-spacing: 0.30em;
     line-height: 1;
@@ -14,11 +13,18 @@ body{
 .nav-bar{
     display: flex;
     justify-content: space-between;
-    padding: 3% 4%;
+    padding: 3% 3%;
     background-color: #f1f2ed;
     width: 100%;
-    /* position: relative;
-    top: 0; */
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 10000000000;
+}
+.nav-bar::after{
+    content: "";
+    display: block;
+    clear: both;
 }
 .nav-links{
     display: flex;
@@ -33,41 +39,83 @@ body{
 }
 .main-wrapper{
     display: flex;
-    justify-content: space-between;
-    margin: 5% 7%;
+    align-items: center;
+    /* gap: 1em; */
+    max-height: 50%;
+    /* height: max-content; */
+    padding-right: 10vh;
+    padding-left: 10vh;
     color: #f1f2ed;
     height: 100vh;
     overflow: hidden;
+}
+.main_left{
+    width: 40%;
 }
 .main_left a{
     text-decoration: none;
     color: #f1f2ed;
     line-height: .85;
-    font-size: 1.8rem;
+    font-size: 1.3rem;
+    font-weight: 100;
     text-transform: uppercase;
 }
-.main_left a:hover{
-    transform: rotate(360deg);
+@keyframes rotate {
+	0% {
+		transform: rotate(0);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+.view_all:hover{
+    animation: rotate 2s linear 2s 1 normal forwards;
 }
 .main_left h3{
-    font-size: 5rem;
-    line-height: 1.1;
+    font-size: 3rem;
+    line-height: 1.5;
     font-weight: 400;
     margin-bottom: 15%;
     margin-right: 15%;
 }
+.main_center, .main_right{
+    width: 30%;
+    padding-left: 3%;
+}
 .main-wrapper img{
-    width: 400px;
+    max-width: 100%;
     margin-bottom: 3%;
 }
+.main_center{
+    animation: slide 20s linear infinite;
+}
+
+.main_right{
+    /* transition: translateY 0s linear; */
+    animation: slide 10s linear infinite reverse;
+}
 @keyframes slide{
-    from{transform: translateY(-200px);}
+	0% {
+		transform: translateY(-2500px);
+	}
+	40% {
+		transform: translateY(0);
+	}
+    70% {
+		transform: translateY(1000px);
+	}
+
+	100% {
+		transform: translateY(2500px);
+    }
+}
+/* @keyframes slide{
+    from{transform: translateY(1px);}
     to{transform: translateY(1000px);}
-}
-.main_center img{
-    animation: slide 7s ease-out infinite;
-}
-@keyframes around{
+} */
+
+/* @keyframes around{
     0%{transform: translateY(-200px);
     }
     40%{
@@ -79,7 +127,9 @@ body{
     100%{
         transform: translateY(100000px);
     }
-}
-.main_right{
-    animation: around 4s linear infinite;
-}
+} */
+
+/* @keyframes slide{
+    from{transform: translateY(-200px);}
+    to{transform: translateY(1000px);}
+} */
