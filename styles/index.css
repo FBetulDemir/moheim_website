@@ -60,7 +60,7 @@ body{
     font-weight: 100;
     text-transform: uppercase;
 }
-@keyframes rotate {
+/* @keyframes rotate {
 	0% {
 		transform: rotate(0);
 	}
@@ -71,7 +71,7 @@ body{
 }
 .view_all:hover{
     animation: rotate 2s linear 2s 1 normal forwards;
-}
+} */
 .main_left h3{
     font-size: 3rem;
     line-height: 1.5;
@@ -88,12 +88,12 @@ body{
     margin-bottom: 3%;
 }
 .main_center{
-    animation: slide 20s linear infinite;
+    animation: slide 30s linear infinite;
 }
 
 .main_right{
     /* transition: translateY 0s linear; */
-    animation: slide 10s linear infinite reverse;
+    animation: slide 30s linear infinite reverse;
 }
 @keyframes slide{
 	0% {
